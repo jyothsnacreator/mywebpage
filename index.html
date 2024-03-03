@@ -1,154 +1,297 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    <title>Hello World!</title>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <!-- Bootstrap CSS -->
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-       
-     * {
-       box-sizing: border-box;
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin-top: 80px; /* Adjusting for the navbar height */
+            background-color:#E5DED3;
+           
+
+        }
+
+        .navbar {
+            background-color:#E5DED3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-link {
+            color: #333;
+            cursor: pointer;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #D1DFDA; /* Replace 'path_to_your_image.jpg' with the path to your background image */
+            background-size: cover;
+             background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            color: #007bff;
+            margin-top: 40px;
+        }
+        
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+
+
+        .experience {
+    margin-top: 30px;
+}
+
+.experience h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.job {
+    margin-bottom: 20px;
+}
+
+.job h4 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.job p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.job ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.job li {
+    color: black;
+    margin-bottom: 5px;
+}
+.contact-details {
+        margin-top: 20px;
     }
 
-  body {
-     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-       
-      
-  h2  {
-        color: rgb(2, 2, 61);
-         align-content: center;
-     }
+    .contact-details h2 {
+        margin-bottom: 10px;
+        color: #007bff;
+    }
 
-      body{
-            margin:0; padding: 0;
-            background-image: url("https://images.rawpixel.com/image_600/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdHAxODUtbmluZy1pbnN0YWdyYW1wb3N0LTAzYi5qcGc.jpg?s=_dcvcOyZ-loocI_f-FrWFIpNOeluADQJCKVQpxPXbVc") ;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-size: cover;
-            height: 100%;
-           
-            font-family: Arial, Helvetica, sans-serif;
-      }
-  .sidenav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color:hidden;
- overflow-x: hidden;
-}
-.sidenav a {
-  color:purple;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-}
-.sidenav i{
-  color:purple;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-}
-.sidenav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-.sidenav i:hover {
-  background-color: #ddd;
-  color: black;
-}
- 
-.content {
-  margin-left: 200px;
-  padding-left: 20px;
-}
+    .contact-details ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
 
-.container {
-  width: 100%;
-  max-width: 800px; /* optional: set a max-width for the container */
-  margin: 0 auto; /* center the container */
-}
+    .contact-details li {
+        margin-bottom: 10px;
+    }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
+    .contact-details li a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
 
-th, td {
-  text-align: center;
-  padding: 10px;
-  color: blueviolet;
-}
+    .contact-details li a:hover {
+        color: #0056b3;
+    }
+    .education {
+        margin-top: 20px;
+    }
 
-img {
-  max-width: 50%;
-  height: auto;
-}
+    .education h3 {
+        color: #007bff;
+        margin-bottom: 5px;
+    }
 
+    .education p {
+        color: #333;
+        margin-bottom: 5px;
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">About Me</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section1">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section2">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section3">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section4">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section5">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Main Content -->
+    <div class="container" id="section1">
+        <!-- Image -->
+        <div class="text-center">
+            <img src="./jyothsna.jpg" alt="Profile Image" class="img-fluid rounded-circle mb-3" style="max-width: 200px; height: auto;">
+        </div>
 
- </style>
-  </head>
-  <body>
-    <div class="sidenav">
-   
-    <img src="./jyothsna.jpg" alt="my profile picture" width="200" height="200" style="padding: 7%;border-style: inset; border-color: chartreuse;">
-    <a href="https://www.linkedin.com/in/sai-jyothsna-pulivarthi-9b85b41a3/" target="_blank" >LinkedIn</a>
-    <i class="glyphicon glyphicon-envelope" >spulivar@kent.edu</i>
-
-
-   
-  </div>
-  <div class="content">
-    <h1 style="font-family:cursive;font-size:xx-large;color: rgb(255, 0, 0);">Sai Jyothsna Pulivarthi</h1>
-    <h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align-last: inherit;font-family: cursive;font-size: medium;">Computer science student </h5>
-    <br>
-    <p style="text-align: justify; padding-right: 0.7cm;font-family: cursive;font-size: large;" >
-     &emsp; &emsp; I am well acquainted with the cloud computing technologies like Google Cloud Platform, AWS, and Azure. My goal is to become associated with a company where I can utilize my skills and gain further experience while enhancing the company's productivity and reputation. My immediate career objective is to use my skills best to achieve the company's goals. Therefore seeking a challenging job in the area of IT which will help me explore myself fully and realize my potential willingness to work as a key player.
-
-    </p>
-    
-    <div class="container">
-      <h1 style="font-family: cursive;font-size:large;color: black;">my skills</h1>
+        <!-- Content -->
+        <h1>Introduction</h1>
+         <p> I am well acquainted with the cloud computing technologies like Google Cloud Platform, AWS, and Azure. My goal is to become associated with a company where I can utilize my skills and gain further experience while enhancing the company's productivity and reputation. My immediate career objective is to use my skills best to achieve the company's goals. Therefore seeking a challenging job in the area of IT which will help me explore myself fully and realize my potential willingness to work as a key player.</p>
+        <h2 id="section2">Education</h2>
+        <div class="education">
+            <h3>Kent State University</h3>
+            <p>Jan 2023 - Dec 2024</p>
+            <p>Kent, OH</p>
+            <p>Master of Science, Computer Science</p>
+            
+            <p>Course Status: Ongoing</p>
+        </div>
+        <h2 id="section3">Experience</h2>
+        <h3>Work Experience</h3>
+        <div class="job" style="color: black;">
+            <h4>Software Engineer</h4>
+            <p>Persistent Systems| India| July 2022- jan 2023</p>
+            <ul style="color: black;">
+                <li>Created Docker images for an application by writing docker files. Pushed the docker
+                    images to the Google cloud repository.
+                    </li>
+                <li>Added Deployments, services for the application using YAML files in Google
+                    Kubernetes cluster.
+                    </li>
+                <li>Created and managed the users, accounts in IAM. Basic Knowledge in Terraform.
+                    </li>
+                <li>Maintained tasks and tickets using JIRA.
+                    </li>
+                <li> Created an ETL data pipeline using cloud composer as an orchestration tool in Google
+                    cloud.</li>
+            </ul>
   
-      <table>
-        <thead>
-          <tr>
-            <th>Java</th>
-            <th>Python</th>
-            <th>CSS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="./java.png" alt="Java Image"></td>
-            <td><img src="./python.png" alt="Python Image"></td>
-            <td><img src="./css-3.png" alt="CSS Image"></td>
-          </tr>
-          <tr>
-            <th>HTML</th>
-            <th>Docker</th>
-            <th>Google Cloud</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="./html.png" alt="Java Image"></td>
-            <td><img src="./docker.png" alt="Python Image"></td>
-            <td><img src="./google-cloud.png" alt="CSS Image"></td>
-          </tr>
-          
-        </tbody>
-      </table>
-     
-    
-   
+            <h4>Software Engineer Intern</h4>
+            <p>Persistent Systems| India| February 2022 - June 2022</p>
+            <ul>
+                <li>Developed a console application “lexicon” using python libraries.
+                   
+                    </li>
+                <li> Completed scrum stories within sprint times as a part of agile methodologies.
+                    
+                    </li>
+                <li>Used GitHub to track all the team members working on their developments.
+                    
+                    </li>
+                <li>Completed training on Linux fundamentals
+                    </li>
+                
+            </ul>
+        </div>
+        <h3>Academic Projects</h3>
+        
+<div class="work-item">
+    <h3>Monitoring Social Distance in Crowded Areas</h3>
+    <p>Takes video input, monitors the distance between people, and highlights violations with a red box while counting the number of violations. Person detection and tracking is based on fine-tuned Yolo V3 and deep sort technique, implemented using Python.</p>
 </div>
-   
-  </div>
-  
-  </body>
+<div class="work-item">
+    <h3>Exploratory Data Analysis on E-Commerce Data</h3>
+    <p>Data cleaning, data training, and data analysis were performed to generate comprehensive reports in graph format utilizing Python. The resulting data insights and trends can be effectively communicated to facilitate informed decision-making. We analyze customer behavior by tracking insights from product statuses, category counts, and monthly sales.</p>
+</div>
+<div class="work-item">
+    <h3>House Price Prediction using Regression Models</h3>
+    <p>Users log in and provide the house specifications and location, and we will generate the house prices. The application of various regression models has been instrumental in accurately forecasting prices. Specifically, the Lasso and XGBoost regression models have been utilized to estimate prices based on the user-provided factors. This approach has proven effective in providing precise and reliable price predictions.</p>
+</div>
+        <h2 id="section4">Skills</h2>
+        <ul>
+          <li>Programming Languages: Python, C ,Java .</li>
+          <li>Data Management & Analytics: MySQL.</li>
+          <li>Web Development: HTML, CSS, JavaScript.</li>
+          <li>Tools: Git.</li>
+          <li>IDEs : Jupyter Notebook , VScode.</li>
+        </ul>
+
+        <h2 id="section5">Contact</h2>
+     
+        <p>You can reach me via:</p>
+        <ul>
+            <li><a href="mailto:spulivar@kent.edu">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/sai-jyothsna-pulivarthi-9b85b41a3/">LinkedIn</a></li>
+        </ul>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+       /* document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });*/
+       /* function closeNavbar() {
+            var navbarToggler = document.querySelector('.navbar-toggler');
+            if (navbarToggler.classList.contains('collapsed')) {
+                // Navbar is already collapsed
+                return;
+            }
+            // Collapse the navbar
+            navbarToggler.click();
+        }*/
+
+        document.querySelectorAll('.nav-link').forEach(item => {
+            item.addEventListener('click', event => {
+                var navbarToggler = document.querySelector('.navbar-toggler');
+                var navbarCollapse = document.querySelector('.navbar-collapse');
+                if (!navbarToggler.classList.contains('collapsed')) {
+                    // Navbar is expanded, close it
+                    navbarCollapse.classList.remove('show');
+                    navbarToggler.classList.add('collapsed');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
