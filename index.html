@@ -72,17 +72,16 @@
             padding: 20px;
         }
 
-        .experience-details {
-            display: none;
-            list-style-type: none;
-            padding: 0;
-            margin: 10px 0 0 0;
+        .experience-item {
+            margin-bottom: 15px;
+            cursor: pointer;
             text-align: left;
         }
 
-        .experience-item {
-            cursor: pointer;
-            margin-bottom: 15px;
+        .experience-details {
+            display: none;
+            list-style-type: none;
+            margin: 10px 0 0 20px;
         }
 
         .experience-item:hover .experience-details {
@@ -108,6 +107,41 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .skill {
+            background: rgba(100, 100, 100, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            animation: floatSkill 3s infinite ease-in-out;
+            transition: transform 0.3s;
+        }
+
+        .skill:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes floatSkill {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
     </style>
 </head>
@@ -152,6 +186,21 @@
                 </ul>
             </li>
         </ul>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Machine Learning</span>
+            <span class="skill">Data Visualization</span>
+            <span class="skill">Cloud Technologies</span>
+            <span class="skill">Tableau</span>
+            <span class="skill">Power BI</span>
+            <span class="skill">Scikit-learn</span>
+            <span class="skill">Seaborn</span>
+            <span class="skill">Pandas</span>
+        </div>
     </section>
     <footer>
         <p>Contact: <a href="mailto:jyothsnapulivarthi2@gmail.com">jyothsnapulivarthi2@gmail.com</a></p>
