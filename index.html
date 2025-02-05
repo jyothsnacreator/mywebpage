@@ -56,124 +56,6 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        header {
-            background: rgba(50, 50, 50, 0.8);
-            padding: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        section {
-            padding: 20px;
-            transition: transform 0.3s;
-        }
-        section:hover {
-            transform: scale(1.05);
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            background: rgba(100, 100, 100, 0.5);
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-        }
-        footer {
-            background: rgba(50, 50, 50, 0.8);
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        a {
-            color: #ffeb3b;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-            .animated-bg {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 80%);
-            animation: moveBackground 10s infinite alternate;
-            z-index: -1;
-        }
-        @keyframes moveBackground {
-            0% { transform: scale(1) translateY(0); }
-            100% { transform: scale(1.2) translateY(-20px); }
-        }
-            .bubble {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: floatBubbles 10s infinite linear;
-            opacity: 0.7;
-        }
-        
-        @keyframes floatBubbles {
-            0% {
-                transform: translateY(100vh) scale(0.5);
-                opacity: 0.5;
-            }
-            50% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1.2);
-                opacity: 0;
-            }
-        }
-        
-        .background-effects {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: -1;
-        }
-        
-        .background-effects .bubble:nth-child(1) {
-            left: 10%;
-            width: 40px;
-            height: 40px;
-            animation-duration: 8s;
-        }
-        
-        .background-effects .bubble:nth-child(2) {
-            left: 30%;
-            width: 20px;
-            height: 20px;
-            animation-duration: 6s;
-        }
-        
-        .background-effects .bubble:nth-child(3) {
-            left: 50%;
-            width: 50px;
-            height: 50px;
-            animation-duration: 10s;
-        }
-        
-        .background-effects .bubble:nth-child(4) {
-            left: 70%;
-            width: 30px;
-            height: 30px;
-            animation-duration: 7s;
-        }
-        
-        .background-effects .bubble:nth-child(5) {
-            left: 90%;
-            width: 25px;
-            height: 25px;
-            animation-duration: 9s;
-        }
     </style>
 </head>
 <body>
@@ -184,126 +66,70 @@
         <div class="bubble"></div>
         <div class="bubble"></div>
     </div>
-</head>
-<body>
     <header>
-        <h1>Welcome to Jyothsna Pulivarthi's Portfolio</h1>
-        <p>Front-End Developer | React | Design Systems | Scalable UI Components</p>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Data Scientist | Machine Learning | AI Enthusiast</p>
     </header>
     <section id="about">
         <h2>About Me</h2>
-        <p>Jyothsna Pulivarthi - Front-End Developer with 2+ years of experience in React, JavaScript, and Design Systems. Passionate about building scalable, reusable UI components and promoting a consistent user experience across design systems.</p>
+        <p>Passionate Data Scientist skilled in transforming complex data into actionable insights. With a strong background in Python, SQL, and machine learning, I love tackling challenging problems and creating scalable solutions that drive impact. Always eager to learn and collaborate!</p>
     </section>
     <section id="experience">
         <h2>Experience</h2>
         <ul>
-            <li class="experience-item"><strong>Front-End Developer - Sierra Consulting Inc., USA (July 2023 – Present)</strong>
-                <ul class="experience-details">
-                    <li>Developed and maintained React-based design system components, ensuring UI consistency across multiple products.</li>
-                    <li>Collaborated with designers and UX teams to implement pixel-perfect UI components using CSS3, Styled Components, and Tailwind CSS.</li>
-                    <li>Implemented TypeScript and unit testing with Jest, improving code reliability by 40%.</li>
-                    <li>Built and optimized Node.js-based development environments, reducing build time by 30%.</li>
+            <li><strong>Data Analyst - Sierra Consulting Inc. (Oct 2024 – Present)</strong>
+                <ul>
+                    <li>Performed exploratory data analysis (EDA) on 1TB+ Ecommerce data, uncovering trends that boosted sales insights by 20%.</li>
+                    <li>Optimized SQL queries to identify and fix 50+ data anomalies, improving dataset reliability by 20%.</li>
+                    <li>Developed predictive models with Scikit-learn, achieving 85% accuracy in student performance predictions.</li>
+                    <li>Automated data cleaning workflows, cutting down preparation time by 40%.</li>
                 </ul>
             </li>
-            <li class="experience-item"><strong>Software Engineer - Persistent Systems, India (Feb 2022 – Jan 2023)</strong>
-                <ul class="experience-details">
-                    <li>Designed and built responsive UI components using React.js and Redux.</li>
-                    <li>Implemented design system best practices to create reusable UI patterns.</li>
-                    <li>Integrated REST APIs for dynamic data rendering, improving page load times by 25%.</li>
-                    <li>Developed interactive dashboards with React Charts and D3.js, enhancing data visualization.</li>
+            <li><strong>Software Developer - Persistent Systems (Feb 2022 – Jan 2023)</strong>
+                <ul>
+                    <li>Built ETL pipelines for processing large datasets, improving data ingestion efficiency by 30%.</li>
+                    <li>Automated data validation and preprocessing with Python scripts, reducing manual effort by 40%.</li>
+                    <li>Designed REST APIs and integrated analytics tools, enhancing real-time data access and decision-making.</li>
                 </ul>
             </li>
-            <li class="experience-item"><strong>Graduate Assistant - Kent State University, Kent, OH (Jan 2024 – May 2024)</strong>
-                <ul class="experience-details">
-                    <li>Graded assignments for IoT courses with 100+ students.</li>
-                    <li>Optimized Java-based applications for improved grading efficiency.</li>
-                    <li>Designed automated quiz systems and conducted Agile-based Java project demos.</li>
-                    <li>Led code reviews and team-building exercises to ensure high-quality deliverables.</li>
+            <li><strong>Graduate Research/Teaching Assistant - Kent State University (Jan 2024 – May 2024)</strong>
+                <ul>
+                    <li>Implemented clustering algorithms (K-means, DBSCAN) on biological datasets to extract patterns, increasing insights by 30%.</li>
+                    <li>Generated 15+ data visualizations using Seaborn and Matplotlib for research presentations.</li>
                 </ul>
             </li>
         </ul>
-        <style>
-            .experience-details {
-                display: none;
-                list-style-type: disc;
-                margin-left: 20px;
-                transition: all 0.3s ease-in-out;
-            }
-            .experience-item:hover .experience-details {
-                display: block;
-            }
-        </style>
-   
-    
+    </section>
     <section id="education">
         <h2>Education</h2>
         <ul>
-            <li><strong>Master of Science in Computer Science</strong> - Kent State University, USA</li>
-            <li><strong>Bachelor of Technology in Computer Science</strong> - JNTU Anantapur, India</li>
+            <li><strong>Master of Science in Computer Science</strong> - Kent State University</li>
+            <li><strong>Bachelor of Technology in Computer Science</strong> - JNTU Anantapur</li>
         </ul>
     </section>
     <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <span class="skill">JavaScript (ES6+)</span>
-            <span class="skill">TypeScript</span>
-            <span class="skill">React.js</span>
-            <span class="skill">Redux</span>
-            <span class="skill">Styled Components</span>
-            <span class="skill">Tailwind CSS</span>
-            <span class="skill">Node.js</span>
-            <span class="skill">Express.js</span>
-            <span class="skill">Storybook</span>
-            <span class="skill">Git</span>
-            <span class="skill">Webpack</span>
-            <span class="skill">CI/CD</span>
-            <span class="skill">Docker</span>
-            <span class="skill">Kubernetes</span>
-            <span class="skill">Java</span>
-            <span class="skill">SpringBoot</span>
-            <span class="skill">Python</span>
-        </div>
-        <style>
-            .skills-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-                padding: 20px;
-                position: relative;
-            }
-            .skill {
-                background: rgba(100, 100, 100, 0.5);
-                padding: 10px 20px;
-                border-radius: 5px;
-                font-size: 16px;
-                animation: floatSkill 3s infinite ease-in-out;
-                transition: transform 0.3s;
-                cursor: pointer;
-            }
-            .skill:hover {
-                transform: scale(1.1);
-            }
-            @keyframes floatSkill {
-                0% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
-                100% { transform: translateY(0px); }
-            }
-        </style>
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>Python (Pandas, NumPy, Scikit-learn)</li>
+            <li>SQL, PostgreSQL, MongoDB</li>
+            <li>Tableau, Power BI, Matplotlib</li>
+            <li>Machine Learning: Regression, Random Forest, Clustering</li>
+            <li>Cloud Technologies: GCP, AWS</li>
+        </ul>
     </section>
     <section id="certifications">
         <h2>Certifications</h2>
         <ul>
-            <li>Associate Google Cloud Engineer</li>
-            <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
-            <li>Python for Everybody</li>
+            <li>Python for Data Science and Machine Learning Bootcamp – Udemy</li>
+            <li>Google Associate Cloud Engineer</li>
+            <li>Python for Everybody – Coursera</li>
         </ul>
     </section>
     <section id="projects">
         <h2>Projects</h2>
         <ul>
-            <li>React Component Library - Built a scalable component library in React using Storybook and TypeScript, improving development efficiency by 50%.</li>
-            <li>Design System Integration - Led the integration of responsive design components into an enterprise UI framework, ensuring seamless user experience across platforms.</li>
+            <li><strong>Analyzing Cricket Data with MySQL</strong> - Managed cricket match records in MySQL, optimized queries by 50%.</li>
+            <li><strong>Consumer Behavior Analysis</strong> - Used linear regression to determine optimal pricing and analyzed demand factors.</li>
         </ul>
     </section>
     <footer>
