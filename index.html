@@ -3,93 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Data Scientist Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Base Styles */
+        * {
             margin: 0;
             padding: 0;
-            text-align: center;
-            background: linear-gradient(to right, #141e30, #243b55);
-            color: #f8f8f2;
-            animation: fadeIn 1s ease-in;
-            position: relative;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+            color: #fff;
+            line-height: 1.6;
             overflow-x: hidden;
-            overflow-y: auto;
         }
 
-        .background-effects {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .bubble {
-            position: absolute;
-            bottom: -50px;
-            width: 20px;
-            height: 20px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            animation: floatBubble 8s infinite ease-in-out;
-        }
-
-        .bubble:nth-child(1) {
-            left: 10%;
-            width: 30px;
-            height: 30px;
-            animation-duration: 9s;
-            animation-delay: 0s;
-        }
-
-        .bubble:nth-child(2) {
-            left: 25%;
-            width: 20px;
-            height: 20px;
-            animation-duration: 6s;
-            animation-delay: 2s;
-        }
-
-        .bubble:nth-child(3) {
-            left: 50%;
-            width: 40px;
-            height: 40px;
-            animation-duration: 10s;
-            animation-delay: 1s;
-        }
-
-        .bubble:nth-child(4) {
-            left: 75%;
-            width: 25px;
-            height: 25px;
-            animation-duration: 7s;
-            animation-delay: 3s;
-        }
-
-        .bubble:nth-child(5) {
-            left: 90%;
-            width: 35px;
-            height: 35px;
-            animation-duration: 8s;
-            animation-delay: 4s;
-        }
-
-        @keyframes floatBubble {
-            0% {
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
                 transform: translateY(0) scale(1);
                 opacity: 0.8;
             }
             50% {
-                transform: translateY(-50vh) scale(1.2);
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-100vh) scale(1.5);
+                transform: translateY(-200px) scale(1.2);
                 opacity: 0;
             }
         }
@@ -97,175 +36,386 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
+                transform: translateY(20px);
             }
-
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        header {
-            padding: 20px;
-        }
-
-        section {
-            padding: 20px;
-        }
-
-        .experience-item {
-            margin-bottom: 15px;
-            cursor: pointer;
-            text-align: center;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-
-        .experience-details {
-            display: none;
-            margin: 10px auto 0;
-            padding: 15px;
-            text-align: center;
-            background-color: rgba(70, 70, 70, 0.9);
-            border-radius: 10px;
-            color: #ffffff;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .experience-item:hover .experience-details {
-            display: block;
-        }
-
-        ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        ul li {
-            margin: 10px 0;
-        }
-
-        #education ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        footer {
-            margin-top: 20px;
-        }
-
-        a {
-            color: #ffeb3b;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px;
-        }
-
-        .skill {
-            background: rgba(100, 100, 100, 0.5);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            animation: floatSkill 3s infinite ease-in-out;
-            transition: transform 0.3s;
-        }
-
-        .skill:hover {
-            transform: scale(1.1);
-        }
-
-        @keyframes floatSkill {
-            0% {
-                transform: translateY(0px);
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
             }
-
             50% {
                 transform: translateY(-10px);
             }
+        }
 
-            100% {
-                transform: translateY(0px);
+        /* Floating Background */
+        .background-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            color: #cbd5e1;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .experience-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .experience-card .company {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .experience-card ul {
+            list-style-position: inside;
+            color: #cbd5e1;
+        }
+
+        .experience-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .education-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .education-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .education-card p {
+            color: #60a5fa;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #cbd5e1;
+        }
+
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #93c5fd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .experience-card, .education-card {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="background-effects">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-    </div>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Data Scientist | Machine Learning | AI Enthusiast</p>
-    </header>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Passionate Data Scientist skilled in transforming complex data into actionable insights. With a strong background in Python, SQL, and machine learning, I love tackling challenging problems and creating scalable solutions that drive impact. Always eager to learn and collaborate!</p>
-    </section>
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul>
-            <li class="experience-item"><strong>Data Analyst - Sierra Consulting Inc. (Oct 2024 – Present)</strong>
-                <ul class="experience-details">
-                    <li>Performed exploratory data analysis (EDA) on 1TB+ Ecommerce data, uncovering trends that boosted sales insights by 20%.</li>
-                    <li>Optimized SQL queries to identify and fix 50+ data anomalies, improving dataset reliability by 20%.</li>
-                    <li>Developed predictive models with Scikit-learn, achieving 85% accuracy in student performance predictions.</li>
-                    <li>Automated data cleaning workflows, cutting down preparation time by 40%.</li>
-                </ul>
-            </li>
-            <li class="experience-item"><strong>Software Developer - Persistent Systems (Feb 2022 – Jan 2023)</strong>
-                <ul class="experience-details">
-                    <li>Built ETL pipelines for processing large datasets, improving data ingestion efficiency by 30%.</li>
-                    <li>Automated data validation and preprocessing with Python scripts, reducing manual effort by 40%.</li>
-                    <li>Designed REST APIs and integrated analytics tools, enhancing real-time data access and decision-making.</li>
-                </ul>
-            </li>
-            <li class="experience-item"><strong>Graduate Research/Teaching Assistant - Kent State University (Jan 2024 – May 2024)</strong>
-                <ul class="experience-details">
-                    <li>Implemented clustering algorithms (K-means, DBSCAN) on biological datasets to extract patterns, increasing insights by 30%.</li>
-                    <li>Generated 15+ data visualizations using Seaborn and Matplotlib for research presentations.</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>Master of Science in Computer Science</strong> - Kent State University</li>
-            <li><strong>Bachelor of Technology in Computer Science</strong> - JNTU Anantapur</li>
-        </ul>
-    </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <span class="skill">Python</span>
-            <span class="skill">SQL</span>
-            <span class="skill">Machine Learning</span>
-            <span class="skill">Data Visualization</span>
-            <span class="skill">Cloud Technologies</span>
-            <span class="skill">Tableau</span>
-            <span class="skill">Power BI</span>
-            <span class="skill">Scikit-learn</span>
-            <span class="skill">Seaborn</span>
-            <span class="skill">Pandas</span>
+    <!-- Background Particles -->
+    <div class="background-particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Data Scientist & ML Engineer</h1>
+            <p>Transforming complex data into actionable insights</p>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:jyothsnapulivarthi2@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <i class="fas fa-chevron-down" style="font-size: 2rem; animation: bounce 2s infinite;"></i>
         </div>
     </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>Passionate Data Scientist skilled in transforming complex data into actionable insights. 
+                With a strong background in Python, SQL, and machine learning, I love tackling challenging 
+                problems and creating scalable solutions that drive impact. Always eager to learn and collaborate!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Data Analyst</h3>
+                    <p class="company">Sierra Consulting Inc. | Oct 2024 – Present</p>
+                    <ul>
+                        <li>Performed exploratory data analysis (EDA) on 1TB+ Ecommerce data, uncovering trends that boosted sales insights by 20%.</li>
+                        <li>Optimized SQL queries to identify and fix 50+ data anomalies, improving dataset reliability by 20%.</li>
+                        <li>Developed predictive models with Scikit-learn, achieving 85% accuracy in student performance predictions.</li>
+                        <li>Automated data cleaning workflows, cutting down preparation time by 40%.</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Software Developer</h3>
+                    <p class="company">Persistent Systems | Feb 2022 – Jan 2023</p>
+                    <ul>
+                        <li>Built ETL pipelines for processing large datasets, improving data ingestion efficiency by 30%.</li>
+                        <li>Automated data validation and preprocessing with Python scripts, reducing manual effort by 40%.</li>
+                        <li>Designed REST APIs and integrated analytics tools, enhancing real-time data access and decision-making.</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Graduate Research/Teaching Assistant</h3>
+                    <p class="company">Kent State University | Jan 2024 – May 2024</p>
+                    <ul>
+                        <li>Implemented clustering algorithms (K-means, DBSCAN) on biological datasets to extract patterns, increasing insights by 30%.</li>
+                        <li>Generated 15+ data visualizations using Seaborn and Matplotlib for research presentations.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Machine Learning</div>
+                <div class="skill-tag">Data Visualization</div>
+                <div class="skill-tag">Cloud Technologies</div>
+                <div class="skill-tag">Tableau</div>
+                <div class="skill-tag">Power BI</div>
+                <div class="skill-tag">Scikit-learn</div>
+                <div class="skill-tag">Seaborn</div>
+                <div class="skill-tag">Pandas</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Master of Science in Computer Science</h3>
+                    <p>Kent State University</p>
+                </div>
+                <div class="education-card">
+                    <h3>Bachelor of Technology in Computer Science</h3>
+                    <p>JNTU Anantapur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>Contact: <a href="mailto:jyothsnapulivarthi2@gmail.com">jyothsnapulivarthi2@gmail.com</a></p>
+        <div class="container">
+            <p>Contact me at <a href="mailto:jyothsnapulivarthi2@gmail.com">jyothsnapulivarthi2@gmail.com</a></p>
+        </div>
     </footer>
+
+    <!-- Particle Animation Script -->
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 20;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size between 10px and 30px
+                const size = Math.random() * 20 + 10;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                
+                // Random animation delay and duration
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Create particles when the page loads
+        window.addEventListener('load', createParticles);
+    </script>
 </body>
 </html>
